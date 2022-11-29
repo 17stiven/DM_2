@@ -3,27 +3,26 @@
 import React, {useState} from 'react';
 import {
   Pressable,
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
   useColorScheme,
   View,
-  Modal,
+  
 } from 'react-native';
-
+import {Form} from './src/components/Form';
 import {
   Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
+  
 } from 'react-native/Libraries/NewAppScreen';
 
 
 
 const App= ()  => {
+  const [modalVisible, setModalVisible]=useState(false);
+  console.log(modalVisible);
+  const newUser=()=>{
+    console.log('Diste clic en usuario');
+  };
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
@@ -41,13 +40,11 @@ const App= ()  => {
 </Text>
        </Text>
       <Pressable
-      onPress={nuevoUsuario} style={styles.btnNuevoUsuario}
+      onPress={()=>{setModalVisible(true)}} style={styles.btnNuevoUsuario}
      >
 <Text style={styles.btnTxtNuevoUsuario}>Nueva cita</Text>
       </Pressable>
-    <Modal animationType="slide" visible={false}>
-      <Text>Modal</Text>
-      </Modal>  
+      <Form modalVisible={modalVisible}/>     
         </View>
      
   );
