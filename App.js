@@ -1,7 +1,6 @@
 
 
-import React from 'react';
-import type {Node} from 'react';
+import React, {useState} from 'react';
 import {
   Pressable,
   SafeAreaView,
@@ -11,6 +10,7 @@ import {
   Text,
   useColorScheme,
   View,
+  Modal,
 } from 'react-native';
 
 import {
