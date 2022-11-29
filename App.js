@@ -3,6 +3,7 @@
 import React from 'react';
 import type {Node} from 'react';
 import {
+  Pressable,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -39,9 +40,14 @@ const App= ()  => {
 
 </Text>
        </Text>
-       <Button title='Nuevo usuario'>
-
-       </Button>
+      <Pressable
+      onPress={nuevoUsuario} style={styles.btnNuevoUsuario}
+     >
+<Text style={styles.btnTxtNuevoUsuario}>Nueva cita</Text>
+      </Pressable>
+    <Modal animationType="slide" visible={false}>
+      <Text>Modal</Text>
+      </Modal>  
         </View>
      
   );
@@ -60,9 +66,21 @@ sectionTitle:{
 sectionTitleBold:{
   fontWeight:'900',
   color:'#6D28D9',
+  textAlign: 'center',
 },
-highligh:{
-  fontWeight:'700'
+btnNuevoUsuario:{
+  backgroundColor:'#6D28D9',
+  padding:20,
+  marginTop:20,
+  marginHorizontal:20,
+  borderRadius:10
+},
+btnTxtNuevoUsuario:{
+  textAlign: 'center',
+  color:'#FFFFFF',
+  fontSize:20,
+  fontWeight:'900',
+  textTransform:'uppercase'
 }
 });
 
